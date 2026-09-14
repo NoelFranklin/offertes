@@ -63,6 +63,7 @@
   .simulator .hint{ color:#A9B4C8; font-size:14px; margin-bottom:26px; }
   .field{ margin-bottom:22px; }
   .field label{ display:block; font-size:13px; color:#C7CEDB; margin-bottom:8px; }
+  .val-readout{ color:var(--brass-soft); font-weight:600; margin-left:6px; }
   .field .row{ display:flex; align-items:center; gap:10px; }
   .field input[type=range]{ flex:1; accent-color:var(--brass); }
   .field .val{
@@ -122,7 +123,7 @@
           <div class="hint">Verschuif of typ je huidig bruto maandloon.</div>
 
           <div class="field">
-            <label>Bruto maandloon</label>
+            <label>Bruto maandloon <span class="val-readout" id="loonReadout" data-clarity-unmask="true">€ 3.500</span></label>
             <div class="row">
               <input type="range" id="loonRange" min="2000" max="9000" step="50" value="3500">
               <input type="number" id="loonInput" value="3500" step="50">
@@ -130,7 +131,7 @@
           </div>
 
           <div class="field">
-            <label>Netto-onkostenvergoeding (per maand)</label>
+            <label>Netto-onkostenvergoeding (per maand) <span class="val-readout" id="onkostenReadout" data-clarity-unmask="true">€ 150</span></label>
             <div class="row">
               <input type="range" id="onkostenRange" min="0" max="600" step="10" value="150">
               <input type="number" id="onkostenInput" value="150" step="10">
@@ -165,7 +166,7 @@
             <div>
               <div class="label">Geschat dagtarief</div>
             </div>
-            <div class="amount" id="tariefOut">—<span>/dag</span></div>
+            <div class="amount" id="tariefOut" data-clarity-unmask="true">—<span>/dag</span></div>
           </div>
           <div class="note">Indicatieve berekening — geen bindende offerte. [FORMULE HIERONDER AANPASSEN AAN JULLIE ECHTE TARIEFLOGICA]</div>
         </div>
@@ -231,10 +232,15 @@
     };
   }
 
+  const loonReadout = document.getElementById('loonReadout');
+  const onkostenReadout = document.getElementById('onkostenReadout');
+
   function updateTarief(){
     const input = huidigeInput();
     const t = berekenTarief(input);
     tariefOut.innerHTML = '€ ' + t.toLocaleString('nl-BE') + '<span>/dag</span>';
+    loonReadout.textContent = '€ ' + input.bruto_maand.toLocaleString('nl-BE');
+    onkostenReadout.textContent = '€ ' + input.onkosten_maand.toLocaleString('nl-BE');
     if(window.clarity){
       window.clarity("set", "laatst_tarief", String(t));
       window.clarity("event", "simulator_aangepast");
