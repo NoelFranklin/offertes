@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offerte — Bonnie Professionals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- ===== MICROSOFT CLARITY — vervang PROJECT_ID door je eigen Clarity Project ID ===== -->
+<!-- Vind je Project ID in Clarity: je project > Settings > Setup -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yi3ec2490b");
+</script>
+<style>
+  :root{
+    --ink:#16233A;
+    --ink-soft:#2B3B54;
+    --paper:#FAFAF8;
+    --paper-dim:#F0EEE8;
+    --brass:#A9803F;
+    --brass-soft:#C9AC79;
+    --line:#D8D3C6;
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: "Inter", -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  header.masthead{
+    border-bottom:1px solid var(--line);
+    padding:48px max(24px, calc(50% - 340px)) 40px;
+  }
+  .kicker{ font-family:var(--sans); font-size:13px; color:var(--brass); font-weight:600; margin-bottom:14px; letter-spacing:.01em; }
+  h1.title{ font-family:var(--serif); font-weight:600; font-size:clamp(32px,5vw,46px); line-height:1.1; max-width:640px; }
+  .sub{ margin-top:14px; font-size:17px; color:var(--ink-soft); max-width:520px; }
+
+  main{ padding:0 max(24px, calc(50% - 340px)) 80px; }
+  section{ max-width:680px; padding-top:56px; }
+  section h2{ font-family:var(--serif); font-weight:600; font-size:24px; margin-bottom:16px; }
+  section p{ font-size:16px; color:var(--ink-soft); max-width:600px; margin-bottom:14px; }
+
+  .pillars{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:24px; max-width:600px;}
+  .pillar{ background:var(--paper); padding:22px; }
+  .pillar .n{ font-family:var(--serif); font-size:22px; color:var(--brass); margin-bottom:8px; }
+  .pillar .t{ font-size:14px; color:var(--ink-soft); }
+
+  /* ---------- SIMULATOR ---------- */
+  .simulator{
+    background:var(--ink); color:var(--paper); border-radius:3px;
+    padding:36px; max-width:640px; margin-top:20px;
+  }
+  .simulator h2{ font-family:var(--serif); color:var(--paper); font-size:22px; margin-bottom:6px; }
+  .simulator .hint{ color:#A9B4C8; font-size:14px; margin-bottom:26px; }
+  .field{ margin-bottom:22px; }
+  .field label{ display:block; font-size:13px; color:#C7CEDB; margin-bottom:8px; }
+  .field .row{ display:flex; align-items:center; gap:10px; }
+  .field input[type=range]{ flex:1; accent-color:var(--brass); }
+  .field .val{
+    font-family:var(--serif); font-size:20px; min-width:118px; text-align:right;
+  }
+  .field input[type=number]{
+    width:118px; padding:8px 10px; font-family:var(--serif); font-size:20px; text-align:right;
+    background:#1F2E47; border:1px solid #3C4E6B; color:var(--paper); border-radius:2px;
+  }
+  .toggle-row{ display:flex; gap:8px; }
+  .toggle-btn{
+    flex:1; padding:10px; font-family:var(--sans); font-size:14px; font-weight:600;
+    background:#1F2E47; border:1px solid #3C4E6B; color:#A9B4C8; border-radius:2px; cursor:pointer;
+  }
+  .toggle-btn.active{ background:var(--brass); border-color:var(--brass); color:var(--ink); }
+
+  .result{
+    margin-top:28px; padding-top:24px; border-top:1px solid #3C4E6B;
+    display:flex; justify-content:space-between; align-items:baseline;
+  }
+  .result .label{ font-size:14px; color:#A9B4C8; }
+  .result .amount{ font-family:var(--serif); font-size:38px; color:var(--brass-soft); }
+  .result .amount span{ font-size:16px; color:#A9B4C8; margin-left:6px; }
+  .note{ font-size:12px; color:#7C8AA3; margin-top:16px; }
+
+  footer{ padding:32px max(24px, calc(50% - 340px)) 60px; border-top:1px solid var(--line); }
+  footer p{ font-size:13px; color:#8A8474; }
+</style>
+</head>
+<body>
+
+  <!-- ===== INHOUD — wordt automatisch aangevuld per klant via ?d=..., placeholders hieronder zijn de fallback ===== -->
+  <div id="content">
+    <header class="masthead">
+      <img id="klantLogo" src="" alt="" style="display:none; max-height:40px; margin-bottom:20px;">
+      <div class="kicker">Offerte · Bonnie Professionals</div>
+      <h1 class="title" id="offerteTitel">Een tarief dat meegroeit met wat je binnenbrengt.</h1>
+      <p class="sub" id="offerteSub">Hieronder vind je de voorwaarden van onze samenwerking, en een simulator om je eigen tarief te berekenen op basis van je huidig loon.</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Wat je van ons krijgt</h2>
+        <p id="offerteTekst">Korte omschrijving van de samenwerking, scope en duurtijd. [PAS AAN]</p>
+        <div class="pillars">
+          <div class="pillar"><div class="n">01</div><div class="t">Vast aanspreekpunt gedurende de opdracht</div></div>
+          <div class="pillar"><div class="n">02</div><div class="t">Maandelijkse opvolking van resultaten</div></div>
+          <div class="pillar"><div class="n">03</div><div class="t">Volledige transparantie over facturatie</div></div>
+          <div class="pillar"><div class="n">04</div><div class="t">Opzegbaar per maand, geen lange contracten</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Simuleer je tarief</h2>
+        <div class="simulator">
+          <h2>Van brutoloon naar dagtarief</h2>
+          <div class="hint">Verschuif of typ je huidig bruto maandloon.</div>
+
+          <div class="field">
+            <label>Bruto maandloon</label>
+            <div class="row">
+              <input type="range" id="loonRange" min="2000" max="9000" step="50" value="3500">
+              <input type="number" id="loonInput" value="3500" step="50">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Netto-onkostenvergoeding (per maand)</label>
+            <div class="row">
+              <input type="range" id="onkostenRange" min="0" max="600" step="10" value="150">
+              <input type="number" id="onkostenInput" value="150" step="10">
+            </div>
+          </div>
+
+          <div class="field toggle-field">
+            <label>Ziekte facturabel?</label>
+            <div class="toggle-row">
+              <button type="button" class="toggle-btn active" data-toggle="ziekte" data-val="ja">Ja</button>
+              <button type="button" class="toggle-btn" data-toggle="ziekte" data-val="nee">Nee</button>
+            </div>
+          </div>
+
+          <div class="field toggle-field">
+            <label>Optie 2 [naam volgt]</label>
+            <div class="toggle-row">
+              <button type="button" class="toggle-btn active" data-toggle="optie2" data-val="ja">Ja</button>
+              <button type="button" class="toggle-btn" data-toggle="optie2" data-val="nee">Nee</button>
+            </div>
+          </div>
+
+          <div class="field toggle-field">
+            <label>Optie 3 [naam volgt]</label>
+            <div class="toggle-row">
+              <button type="button" class="toggle-btn active" data-toggle="optie3" data-val="ja">Ja</button>
+              <button type="button" class="toggle-btn" data-toggle="optie3" data-val="nee">Nee</button>
+            </div>
+          </div>
+
+          <div class="result">
+            <div>
+              <div class="label">Geschat dagtarief</div>
+            </div>
+            <div class="amount" id="tariefOut">—<span>/dag</span></div>
+          </div>
+          <div class="note">Indicatieve berekening — geen bindende offerte. [FORMULE HIERONDER AANPASSEN AAN JULLIE ECHTE TARIEFLOGICA]</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Bonnie Professionals · Deze link is persoonlijk en niet bedoeld om te delen. Deze pagina houdt geanonimiseerd bij hoe ze gebruikt wordt, om je beter te kunnen adviseren.</p>
+    </footer>
+  </div>
+
+<script>
+(function(){
+
+  /* =========================================================
+     1. SIMULATOR — PAS DEZE FORMULE AAN AAN JULLIE ECHTE LOGICA
+     Huidig (PLACEHOLDER, wacht op de echte berekening):
+       basistarief  = jaarloon * marge-factor / werkdagen
+       + onkostenvergoeding wordt er per dag bovenop geteld
+       + 'ziekte facturabel' en de twee ja/nee-opties tellen nu elk
+         een vaste placeholder-opslag bij als ze op 'ja' staan
+     Vervang dit hele blok zodra je de echte logica doorgeeft.
+     ========================================================= */
+  const WERKDAGEN_PER_JAAR = 220;
+  const MARGE_FACTOR = 1.35; // werkgeverslasten + marge — PAS AAN
+  const ZIEKTE_OPSLAG = 0;   // PLACEHOLDER — bv. vaste €/dag opslag als ziekte facturabel = ja
+  const OPTIE2_OPSLAG = 0;   // PLACEHOLDER
+  const OPTIE3_OPSLAG = 0;   // PLACEHOLDER
+
+  function berekenTarief(input){
+    const jaarloon = input.bruto_maand * 12;
+    let tarief = (jaarloon * MARGE_FACTOR) / WERKDAGEN_PER_JAAR;
+    tarief += (input.onkosten_maand * 12) / WERKDAGEN_PER_JAAR;
+    if(input.ziekte === 'ja') tarief += ZIEKTE_OPSLAG;
+    if(input.optie2 === 'ja') tarief += OPTIE2_OPSLAG;
+    if(input.optie3 === 'ja') tarief += OPTIE3_OPSLAG;
+    return Math.round(tarief);
+  }
+
+  const loonRange = document.getElementById('loonRange');
+  const loonInput = document.getElementById('loonInput');
+  const onkostenRange = document.getElementById('onkostenRange');
+  const onkostenInput = document.getElementById('onkostenInput');
+  const tariefOut = document.getElementById('tariefOut');
+
+  const toggleState = { ziekte: 'ja', optie2: 'ja', optie3: 'ja' };
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.toggle;
+      toggleState[key] = btn.dataset.val;
+      document.querySelectorAll(`.toggle-btn[data-toggle="${key}"]`).forEach(b => b.classList.toggle('active', b === btn));
+      updateTarief();
+    });
+  });
+
+  function huidigeInput(){
+    return {
+      bruto_maand: Number(loonInput.value),
+      onkosten_maand: Number(onkostenInput.value),
+      ziekte: toggleState.ziekte,
+      optie2: toggleState.optie2,
+      optie3: toggleState.optie3
+    };
+  }
+
+  function updateTarief(){
+    const input = huidigeInput();
+    const t = berekenTarief(input);
+    tariefOut.innerHTML = '€ ' + t.toLocaleString('nl-BE') + '<span>/dag</span>';
+    if(window.clarity){
+      window.clarity("set", "laatst_tarief", String(t));
+      window.clarity("event", "simulator_aangepast");
+    }
+  }
+  loonRange.addEventListener('input', e => { loonInput.value = e.target.value; updateTarief(); });
+  loonInput.addEventListener('input', e => { loonRange.value = e.target.value; updateTarief(); });
+  onkostenRange.addEventListener('input', e => { onkostenInput.value = e.target.value; updateTarief(); });
+  onkostenInput.addEventListener('input', e => { onkostenRange.value = e.target.value; updateTarief(); });
+  updateTarief();
+
+  /* =========================================================
+     2. PERSONALISATIE — alles komt uit de link zelf (?d=...),
+     geen server/opslag nodig, werkt dus ook op statische hosting
+     zoals GitHub Pages.
+     ========================================================= */
+
+  function decodeerData(){
+    const params = new URLSearchParams(window.location.search);
+    const d = params.get('d');
+    if(!d) return null;
+    try{
+      const json = decodeURIComponent(escape(atob(decodeURIComponent(d))));
+      return JSON.parse(json);
+    }catch(e){ console.warn('kon linkgegevens niet lezen', e); return null; }
+  }
+
+  function pasContentAan(data){
+    if(!data) return;
+    if(data.titel) document.getElementById('offerteTitel').textContent = data.titel;
+    if(data.subtitel) document.getElementById('offerteSub').textContent = data.subtitel;
+    if(data.tekst) document.getElementById('offerteTekst').textContent = data.tekst;
+    if(data.logo){
+      const logoEl = document.getElementById('klantLogo');
+      logoEl.src = data.logo;
+      logoEl.alt = data.naam || '';
+      logoEl.style.display = 'block';
+    }
+    if(data.bruto_start){ loonRange.value = data.bruto_start; loonInput.value = data.bruto_start; }
+    if(data.onkosten_start){ onkostenRange.value = data.onkosten_start; onkostenInput.value = data.onkosten_start; }
+    updateTarief();
+  }
+
+  const data = decodeerData();
+  const sessionNaam = (data && data.naam) || 'Onbekende bezoeker';
+  pasContentAan(data);
+
+  // Clarity: koppel de klantnaam aan deze sessie, zodat je in het Clarity-dashboard
+  // meteen ziet wie de sessie is i.p.v. een anonieme bezoeker-ID.
+  if(window.clarity){
+    window.clarity("identify", sessionNaam.toLowerCase().replace(/[^a-z0-9]+/g,'-'), undefined, undefined, sessionNaam);
+    window.clarity("set", "klant", sessionNaam);
+  }
+
+})();
+</script>
+</body>
+</html>
